@@ -74,68 +74,87 @@ function starting(){
 
     $('.btn').click(function(event) {
         var buttonClass = event.target.classList[1];
+
+        var includeOne = thePattern.includes(1);
+        var includeTwo = thePattern.includes(2);
+        var includeThree = thePattern.includes(3);
+        var includeFour = thePattern.includes(4);
+
+
     
         switch(buttonClass) {
             case 'red':
-                if(thePattern[0] === 1){
+                if(includeOne === true){ 
                     setTimeout(function(){ $('.red').addClass('pressed');},0); 
                     setTimeout(function(){ $('.red').removeClass('pressed');},200); 
                     var red = new Audio('/sounds/red.mp3');
                     red.play();
-                    break;
                 }
                 else{
                     var wrong = new Audio('/sounds/wrong.mp3');
                     setTimeout(() => {
                         wrong.play();
                         $('h1').html('Game Over');
-                    }, 500);
+                    }, 0);
+                    setTimeout(() => {
+                        $('h1').html('Press A Key to Start');
+                    }, 700);
                 }
+                break;
             case 'green':
-                if(thePattern[0] === 2){
+                if(includeTwo === true){
                     setTimeout(function(){ $('.green').addClass('pressed');},0); 
                     setTimeout(function(){ $('.green').removeClass('pressed');},200); 
                     var green = new Audio('/sounds/green.mp3');
                     green.play();
-                    break;
                 }
                 else{
                     var wrong = new Audio('/sounds/wrong.mp3');
                     setTimeout(() => {
                         wrong.play();
                         $('h1').html('Game Over');
-                    }, 500);
+                    }, 0);
+                    setTimeout(() => {
+                        $('h1').html('Press A Key to Start');
+                    }, 700);
                 }
+                break;
             case 'blue':
-                if(thePattern[0] === 3){
+                if(includeThree === true){
                     setTimeout(function(){ $('.blue').addClass('pressed');},0); 
                     setTimeout(function(){ $('.blue').removeClass('pressed');},200); 
                     var blue = new Audio('/sounds/blue.mp3');
                     blue.play();
-                    break;
                 }
                 else{
                     var wrong = new Audio('/sounds/wrong.mp3');
                     setTimeout(() => {
                         wrong.play();
                         $('h1').html('Game Over');
-                    }, 500);
+                    }, 0);
+                    setTimeout(() => {
+                        $('h1').html('Press A Key to Start');
+                    }, 700);
                 }
+                break;
             case 'yellow':
-                if(thePattern[0] === 4){
+                if(includeFour === true){
                     setTimeout(function(){ $('.yellow').addClass('pressed');},0); 
                     setTimeout(function(){ $('.yellow').removeClass('pressed');},200); 
                     var yellow = new Audio('/sounds/yellow.mp3');
                     yellow.play();
-                    break;
                 }
                 else{
                     var wrong = new Audio('/sounds/wrong.mp3');
                     setTimeout(() => {
                         wrong.play();
                         $('h1').html('Game Over');
-                    }, 500);
+                    }, 0);
+                    setTimeout(() => {
+                        $('h1').html('Press A Key to Start');
+                    }, 700);
                 }
+                break;
             default:
                 break;
         }
